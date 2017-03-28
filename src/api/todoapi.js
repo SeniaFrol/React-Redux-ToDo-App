@@ -34,7 +34,7 @@ export default {
       return (searchText.length === 0 || text.indexOf(searchText) > -1);
     });
 
-    //Sort todos by complited or not
+    //Sort todos by completed or not
     filterTodos.sort((a, b) => {
       if(!a.completed && b.completed) {
         return -1;

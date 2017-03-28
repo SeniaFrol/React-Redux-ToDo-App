@@ -5,7 +5,7 @@ import { addTodo } from '../actions'
 export class AddTodo extends Component {
   onInputChange(e) {
     e.preventDefault();
-    // decided to use this only because of tests.
+    // decided to use "dispatch" only because of tests.
     const { dispatch } = this.props;
     const todotext = this.refs.text.value;
     if(todotext.length > 0) {
