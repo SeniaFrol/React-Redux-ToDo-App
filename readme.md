@@ -1,6 +1,6 @@
 #######################
 
 Hi there!
-Simlpe react ToDo app.
+Simlpe React - Redux ToDo app.
 
 Plus automatic tests.
