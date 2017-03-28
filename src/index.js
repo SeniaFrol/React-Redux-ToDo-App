@@ -1,20 +1,15 @@
-import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
-import ToDo from './components/todo.js';
+import React from 'react';
+import { render } from 'react-dom';
+import ToDo from './components/todo';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import rootReducer from './reducers';
 
-class App extends Component {
+const store = createStore(rootReducer);
 
-  render() {
-    return (
-      <div>
-        <ToDo />
-      </div>
-    );
-  }
-}
-
-
-ReactDOM.render(
-    <App />,
+render(
+    <Provider store={store}>
+      <ToDo />
+    </Provider>,
     document.querySelector('.containerApp')
 );
