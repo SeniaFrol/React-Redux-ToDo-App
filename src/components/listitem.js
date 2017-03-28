@@ -1,5 +1,7 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import moment from 'moment';
+import { connect } from 'react-redux';
+import { toggleTodo } from '../actions'
 
 class ToDoListItem extends Component {
   render() {
@@ -18,7 +20,7 @@ class ToDoListItem extends Component {
     };
 
     return(
-      <div className={todoClassName} onClick={() => this.props.onToggle(id)}>
+      <div className={todoClassName} onClick={() => this.props.toggleTodo(id)}>
         <div>
           <input type='checkbox' checked={completed}/>
         </div>
@@ -31,4 +33,5 @@ class ToDoListItem extends Component {
   }
 }
 
-export default ToDoListItem;
+
+export default connect(null, { toggleTodo })(ToDoListItem);

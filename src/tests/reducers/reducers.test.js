@@ -1,7 +1,7 @@
 import expect from 'expect';
-import { searchTextReducer } from '../../reducers/search_reducer';
-import { showCompletedReducer } from '../../reducers/showCompl_reducer';
-import { todoReducer } from '../../reducers/todo_reducer';
+import searchTextReducer from '../../reducers/search_reducer';
+import showCompletedReducer from '../../reducers/showCompl_reducer';
+import todoReducer from '../../reducers/todo_reducer';
 
 
 

@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import TodoAPI from '../api/todoapi.js';
 import moment from 'moment';
 
@@ -37,16 +37,7 @@ export default class ToDo extends Component {
     });
   }
 
-  handleToggle(id) {
-    const updatedTodos = this.state.todos.map((todo) => {
-      if(todo.id === id) {
-        todo.completed = !todo.completed;
-        todo.completedAt = todo.completed ? moment().unix() : undefined;
-      }
-      return todo;
-    });
-    this.setState({todos: updatedTodos});
-  }
+
 
   handleSearch = (showComplited, searchText) => {
     this.setState({
@@ -66,7 +57,7 @@ export default class ToDo extends Component {
         <div className="column small-centered small-11 medium-6 large-5">
           <div className="container">
             <TodoSearch onSearch={this.handleSearch}/>
-            <ToDoList todos={filterTodos} onToggle={(id) =>this.handleToggle(id)} />
+            <ToDoList />
             <AddTodo onChangeInput={(text) => this.handleAddTodo(text)} />
           </div>
         </div>

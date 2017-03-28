@@ -1,7 +1,7 @@
 import uuid from 'node-uuid';
 import moment from 'moment';
 
-export const todoReducer = (state = [], action) => {
+export default function (state = [], action) {
   switch (action.type) {
     case 'ADD_TODO':
       return [
@@ -22,6 +22,8 @@ export const todoReducer = (state = [], action) => {
             completed: nextCompleted,
             completedAt: nextCompleted ? moment().unix() : undefined
           };
+        } else {
+          return todo;
         }
       });
     default:
