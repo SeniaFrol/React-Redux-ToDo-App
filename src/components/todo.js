@@ -11,9 +11,6 @@ export default class ToDo extends Component {
     super(props);
   }
 
-  componentDidUpdate() {
-    TodoAPI.setTodos(this.state.todos);
-  }
   render() {
     return(
       <div>
