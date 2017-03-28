@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import ToDoListItem from './listitem.js';
 import { connect } from 'react-redux';
+import TodoAPi from '../api/todoapi';
+
 
 class ToDoList extends Component {
   render() {
-    const items = this.props.todos.map((item) => {
+    const { todos, showCompleted, searchText } = this.props;
+    const items = TodoAPi.filterTodos(todos, showCompleted, searchText).map((item) => {
       return <ToDoListItem key={item.id} {...item} />
     });
 
@@ -17,9 +20,7 @@ class ToDoList extends Component {
 }
 
 function mapStateToProps(state) {
-  return {
-    todos: state.todos
-  };
+  return state;
 }
 
 export default connect(mapStateToProps)(ToDoList);

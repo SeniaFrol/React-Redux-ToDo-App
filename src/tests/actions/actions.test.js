@@ -1,5 +1,5 @@
 import expect from 'expect';
-import { setSearchText, addTodo, toggleShowComplited, toggleTodo } from '../../actions';
+import { setSearchText, addTodo, toggleShowCompleted, toggleTodo } from '../../actions';
 
 describe("Actions", () => {
   it("Should generate search text action", () => {
@@ -29,7 +29,7 @@ describe("Actions", () => {
       type: "TOGGLE_SHOW_COMPLETED"
     };
 
-    const res = toggleShowComplited();
+    const res = toggleShowCompleted();
 
     expect(res).toEqual(action);
   });
